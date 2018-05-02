@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bean:beans xmlns="http://www.springframework.org/schema/security"
-         xmlns:bean="http://www.springframework.org/schema/beans"
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:beans="http://www.springframework.org/schema/beans"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -9,6 +9,8 @@
     <http auto-config="true">
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/user" access="hasRole('ROLE_USER')" />
+        <form-login />
+        <logout />
     </http>
     <authentication-manager>
         <authentication-provider>
@@ -18,5 +20,4 @@
             </user-service>
         </authentication-provider>
     </authentication-manager>
-
-</bean:beans>
+</beans:beans>
